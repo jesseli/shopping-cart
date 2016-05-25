@@ -1,5 +1,9 @@
 == README
 
+https://shopping-cart-jesseli91.c9users.io/
+https://tranquil-everglades-21329.herokuapp.com/
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
