@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+  def checkout
+  end
+  
   # GET /orders
   # GET /orders.json
   def index

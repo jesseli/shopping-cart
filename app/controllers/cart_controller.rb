@@ -2,21 +2,25 @@ class CartController < ApplicationController
   
   def add
     id = params[:id]
-    #if the cart has already been created, use the existing cart else create a new cart
+    #if the cart has already been created, 
+    #use the existing cart else create a new cart
     if session[:cart] then
         cart = session[:cart]
     else
         session[:cart] = {}
         cart = session[:cart]
     end
+    
 
-    #if the product has already been added to the cart, increment the value else set the
+    #if the product has already been added to the cart, 
+    #increment the value else set the quantity to 1
     if cart[id] then
       cart[id] = cart[id] + 1
     else
       cart[id] = 1
     end
       redirect_to :action => :index
+
   end #end add method
 
   def clearCart
@@ -44,6 +48,15 @@ class CartController < ApplicationController
   def show
   end
 
+  def checkout
+    @order = Order.new()
+    @order.shopper_id = current_shopper.id
+    @order.date = Time.now.strftime("%Y/%m/%d")
+    @order.save
+    redirect_to controller: 'orders'
+  end
+  
+  
   # GET /carts/new
   def new
     @cart = Cart.new

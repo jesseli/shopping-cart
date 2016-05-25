@@ -25,6 +25,5 @@
 <%= link_to "Continue Shopping", items_path %>
 <br>
 <%= link_to 'Submit Order',
-    :controller => "item_order",
-    :action => "new",
-    :cart => @cart %>
+    :controller => "cart",
+    :action => "checkout" %>

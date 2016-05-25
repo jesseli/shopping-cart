@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 
-  get '/submit_cart' => 'orders#index'
+  get '/cart/checkout' => 'cart#checkout'
   get 'cart/index'
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clearCart'
